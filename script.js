@@ -8,7 +8,14 @@ buttons.forEach(button => {
         const value = this.getAttribute('data-value');
         if (this.id === 'clear') {
             display.value = '';
-        } else {
+        } else if (this.id === 'equals') {
+    try {
+        display.value = eval(display.value);
+    } catch (e) {
+        display.value = 'Error';
+    } 
+}
+        else {
             display.value += value;
         }
     });
